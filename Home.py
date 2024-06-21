@@ -74,8 +74,8 @@ with count_col2:
 
 
 # 선 그래프
-graph_yn = st.checkbox("그래프 보이기")
-if graph_yn == False :
+graph_yn = st.checkbox("그래프 보이기", value=True)
+if graph_yn :
 
 
     # data = (start_date_minus_one_month_str, end_date_minus_one_month_str)
@@ -140,12 +140,12 @@ if time_option == '12시간' :
 with col1:
     st.write("연동")
     st.plotly_chart(연동_카테고리_카운트_fig, use_container_width=True)
-    linked_data_show = st.checkbox("연동 질문 보기")
-    if linked_data_show == False:
+    linked_data_show = st.checkbox("연동 질문 보기", value=True)
+    if linked_data_show :
         st.table(answer_list_df)
 with col2:
     st.write("미연동")
     st.plotly_chart(미연동_카테고리_카운트_fig, use_container_width=True)
-    unlinked_data_show = st.checkbox("미연동 질문 보기")
-    if unlinked_data_show == False:
+    unlinked_data_show = st.checkbox("미연동 질문 보기", value=True)
+    if unlinked_data_show :
         st.table(answer_list_df)
